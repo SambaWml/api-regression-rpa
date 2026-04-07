@@ -12,7 +12,7 @@
     }
   },
   "rewrites": [
-    { "source": "/api/:path*", "destination": "/_/backend/:path*" },
-    { "source": "/((?!assets/).*)", "destination": "/index.html" }
+    { "source": "/((?!_/).*\\..+)", "destination": "/$1" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

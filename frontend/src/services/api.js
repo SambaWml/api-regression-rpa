@@ -1,8 +1,9 @@
 import axios from 'axios'
 
 // Em desenvolvimento, o Vite proxy redireciona /api → localhost:8000
-// Em produção no Vercel, o rewrite mapeia /api/* → /_/backend/*
-const BASE_URL = import.meta.env.VITE_API_URL ?? '/api'
+// Em produção no Vercel, chama /_/backend diretamente (routePrefix do experimentalServices)
+const BASE_URL = import.meta.env.VITE_API_URL ??
+  (import.meta.env.PROD ? '/_/backend' : '/api')
 
 const client = axios.create({
   baseURL: BASE_URL,
