@@ -19,10 +19,17 @@ export function Dashboard() {
     setFetching(true)
     api.getEndpoints()
       .then(data => {
-        setEndpoints(data)
-        setSelected(data.map(e => e.id))
+        const list = Array.isArray(data) ? data : []
+        setEndpoints(list)
+        setSelected(list.map(e => e.id))
+        if (!Array.isArray(data)) {
+          setError(`Backend retornou resposta inesperada: ${JSON.stringify(data)}`)
+        }
       })
-      .catch(() => setError('Não foi possível conectar ao backend. Verifique se o servidor está rodando em localhost:8000'))
+      .catch(err => {
+        const detail = err?.response?.data?.detail ?? err?.message ?? 'Erro desconhecido'
+        setError(`Não foi possível conectar ao backend: ${detail}`)
+      })
       .finally(() => setFetching(false))
   }, [])
 

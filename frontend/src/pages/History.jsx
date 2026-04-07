@@ -11,7 +11,7 @@ export function History() {
   function load() {
     setLoading(true)
     api.listResults()
-      .then(setReports)
+      .then(data => setReports(Array.isArray(data) ? data : []))
       .catch(() => setReports([]))
       .finally(() => setLoading(false))
   }
