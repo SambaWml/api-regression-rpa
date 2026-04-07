@@ -1,0 +1,13 @@
+{
+  "expected_status": 200,
+  "max_response_time_ms": 3000,
+  "flexible_comparison": true,
+  "ignore_fields": ["updatedAt", "token", "timestamp"],
+  "required_fields": ["id", "name", "username", "email"],
+  "expected_types": {
+    "id": "int",
+    "name": "str",
+    "username": "str",
+    "email": "str"
+  }
+}

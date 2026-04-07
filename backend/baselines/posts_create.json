@@ -1,0 +1,17 @@
+{
+  "expected_status": 201,
+  "max_response_time_ms": 3000,
+  "flexible_comparison": true,
+  "ignore_fields": ["id", "createdAt"],
+  "required_fields": ["title", "body", "userId"],
+  "expected_types": {
+    "title": "str",
+    "body": "str",
+    "userId": "int"
+  },
+  "baseline_body": {
+    "title": "Test Post",
+    "body": "Conteúdo do post de teste",
+    "userId": 1
+  }
+}
