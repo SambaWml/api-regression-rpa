@@ -1,0 +1,15 @@
+{
+  "expected_status": 200,
+  "required_fields": [
+    "id",
+    "name",
+    "username",
+    "email"
+  ],
+  "expected_types": {
+    "id": "int",
+    "name": "str",
+    "username": "str",
+    "email": "str"
+  }
+}
