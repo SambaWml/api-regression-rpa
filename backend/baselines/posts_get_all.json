@@ -1,8 +1,0 @@
-{
-  "expected_status": 200,
-  "max_response_time_ms": 3000,
-  "flexible_comparison": true,
-  "ignore_fields": [],
-  "required_fields": [],
-  "expected_types": {}
-}
